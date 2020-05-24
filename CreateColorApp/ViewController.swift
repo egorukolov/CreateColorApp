@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var multiColorView: UIView!
     
     @IBOutlet var redSliderVulue: UILabel!
@@ -20,12 +20,10 @@ class ViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         multiColorView.layer.cornerRadius = 10
     }
-    
     
     @IBAction func redSlidersValues() {
         redSliderVulue.text = String(format: "%.2f", (redSlider.value))
@@ -38,7 +36,6 @@ class ViewController: UIViewController {
         blueSliderValue.text = String(format: "%.2f", (blueSlider.value))
     }
     
-    
     func changeColor() {
         multiColorView.backgroundColor = UIColor.init(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
     }
@@ -46,6 +43,5 @@ class ViewController: UIViewController {
     @IBAction func rgbChangeSlider() {
         changeColor()
     }
-    
 }
 
