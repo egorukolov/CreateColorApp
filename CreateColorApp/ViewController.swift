@@ -23,11 +23,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         multiColorView.layer.cornerRadius = 10
+        multiColorView.backgroundColor = .black
     }
     
     @IBAction func redSlidersValues() {
         redSliderVulue.text = String(format: "%.2f", (redSlider.value))
     }
+    
     @IBAction func greenSlidersValues() {
         greenSliderValue.text = String(format: "%.2f", (greenSlider.value))
     }
@@ -36,12 +38,15 @@ class ViewController: UIViewController {
         blueSliderValue.text = String(format: "%.2f", (blueSlider.value))
     }
     
-    func changeColor() {
-        multiColorView.backgroundColor = UIColor.init(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
-    }
-    
     @IBAction func rgbChangeSlider() {
         changeColor()
+    }
+    
+    private func changeColor() {
+        multiColorView.backgroundColor =
+            UIColor.init(red: CGFloat(redSlider.value),
+                         green: CGFloat(greenSlider.value),
+                         blue: CGFloat(blueSlider.value), alpha: 1)
     }
 }
 
